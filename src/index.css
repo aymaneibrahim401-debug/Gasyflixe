@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Bebas+Neue&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cinéma Rétro Vintage Design System
+   Palette : noir profond, dorés, bordeaux, crème
+   Typographies : Playfair Display (serif), Bebas Neue (display), Inter (body)
+*/
+
+@layer base {
+  :root {
+    --background: 30 15% 8%;
+    --foreground: 40 30% 92%;
+
+    --card: 30 18% 11%;
+    --card-foreground: 40 30% 92%;
+
+    --popover: 30 18% 11%;
+    --popover-foreground: 40 30% 92%;
+
+    --primary: 42 65% 55%;
+    --primary-foreground: 30 25% 8%;
+    --primary-glow: 42 80% 65%;
+
+    --secondary: 0 55% 28%;
+    --secondary-foreground: 40 30% 92%;
+
+    --muted: 30 12% 18%;
+    --muted-foreground: 40 15% 65%;
+
+    --accent: 0 60% 38%;
+    --accent-foreground: 40 30% 92%;
+
+    --destructive: 0 75% 45%;
+    --destructive-foreground: 40 30% 92%;
+
+    --border: 35 20% 22%;
+    --input: 35 20% 18%;
+    --ring: 42 65% 55%;
+
+    --radius: 0.25rem;
+
+    /* Cinéma tokens */
+    --burgundy: 0 55% 28%;
+    --burgundy-deep: 0 60% 18%;
+    --gold: 42 65% 55%;
+    --gold-bright: 45 85% 65%;
+    --cream: 40 35% 90%;
+    --noir: 30 20% 6%;
+
+    --gradient-curtain: linear-gradient(180deg, hsl(0 55% 18%) 0%, hsl(0 60% 12%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(42 65% 55%) 0%, hsl(38 75% 45%) 100%);
+    --gradient-noir: linear-gradient(180deg, hsl(30 20% 6%) 0%, hsl(30 15% 10%) 100%);
+    --shadow-gold: 0 10px 40px -10px hsl(42 65% 55% / 0.4);
+    --shadow-poster: 0 20px 50px -15px hsl(0 0% 0% / 0.7);
+
+    --sidebar-background: 30 18% 11%;
+    --sidebar-foreground: 40 30% 92%;
+    --sidebar-primary: 42 65% 55%;
+    --sidebar-primary-foreground: 30 25% 8%;
+    --sidebar-accent: 30 12% 18%;
+    --sidebar-accent-foreground: 40 30% 92%;
+    --sidebar-border: 35 20% 22%;
+    --sidebar-ring: 42 65% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    background-image:
+      radial-gradient(ellipse at top, hsl(0 40% 12% / 0.4), transparent 60%),
+      radial-gradient(ellipse at bottom, hsl(30 30% 8%), hsl(30 20% 5%));
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: -0.01em;
+  }
+
+  .font-display {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.05em;
+  }
+
+  .film-grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.08;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+  }
+}
